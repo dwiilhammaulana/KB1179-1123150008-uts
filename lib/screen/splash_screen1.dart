@@ -21,6 +21,9 @@ class Screen1 extends StatelessWidget {
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.green,
+                image: DecorationImage(image: AssetImage("assets/images/welcome.png"),
+              fit: BoxFit.cover,
+              ),
               ),
             ),
           ],
