@@ -23,6 +23,11 @@ class Login extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
+                const Text(
+                  "Silahkan Login untuk melanjutkan.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 12, color: Colors.green),
+                ),
               ],
             ),
           ),
