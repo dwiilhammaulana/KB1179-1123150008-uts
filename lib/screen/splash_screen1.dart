@@ -6,10 +6,7 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("1123150008"),
-        actions: const [],
-      ),
+      appBar: AppBar(title: const Text("1123150008"), actions: const []),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -21,10 +18,17 @@ class Screen1 extends StatelessWidget {
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.green,
-                image: DecorationImage(image: AssetImage("assets/images/welcome.png"),
-              fit: BoxFit.cover,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/welcome.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
-              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Welcome",
+              style: TextStyle(fontSize: 30, color: Colors.black,
+              fontWeight: FontWeight.bold,),
             ),
           ],
         ),
