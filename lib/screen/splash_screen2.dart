@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:uts_1123150008/screen/splash_screen3.dart';
+import 'package:uts_1123150008/screen/splash_screen3.dart';
 
 class Screen2 extends StatelessWidget {
   const Screen2({super.key});
@@ -51,7 +51,7 @@ class Screen2 extends StatelessWidget {
                   width: 7,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.green,
+                    color: Color(0xFFC8E6C9),
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -60,7 +60,7 @@ class Screen2 extends StatelessWidget {
                   width: 7,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xFFC8E6C9),
+                    color: Colors.green,
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -84,7 +84,7 @@ class Screen2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Screen2()),
+                      MaterialPageRoute(builder: (context) => Screen3()),
                       (Route<dynamic> route) => false,
                     );
                   },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uts_1123150008/screen/splash_screen2.dart';
+import 'package:uts_1123150008/screen/login.dart';
 
 class Screen3 extends StatelessWidget {
   const Screen3({super.key});
@@ -20,7 +20,7 @@ class Screen3 extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.green,
                 image: DecorationImage(
-                  image: AssetImage("assets/images/welcome.png"),
+                  image: AssetImage("assets/images/welcome3.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -51,25 +51,25 @@ class Screen3 extends StatelessWidget {
                   width: 7,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
+                    color: Color(0xFFC8E6C9),
+                  ),
+                ),
+                const SizedBox(width: 5),
+                Container(
+                  height: 7,
+                  width: 7,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFC8E6C9),
+                  ),
+                ),
+                const SizedBox(width: 5),
+                Container(
+                  height: 7,
+                  width: 7,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
                     color: Colors.green,
-                  ),
-                ),
-                const SizedBox(width: 5),
-                Container(
-                  height: 7,
-                  width: 7,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFFC8E6C9),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                Container(
-                  height: 7,
-                  width: 7,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFFC8E6C9),
                   ),
                 ),
               ],
@@ -84,7 +84,7 @@ class Screen3 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Screen2()),
+                      MaterialPageRoute(builder: (context) => login()),
                       (Route<dynamic> route) => false,
                     );
                   },
