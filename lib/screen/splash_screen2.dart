@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:uts_1123150008/screen/splash_screen2.dart';
+// import 'package:uts_1123150008/screen/splash_screen3.dart';
 
-class Screen1 extends StatelessWidget {
-  const Screen1({super.key});
+class Screen2 extends StatelessWidget {
+  const Screen2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Screen1 extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.green,
                 image: DecorationImage(
-                  image: AssetImage("assets/images/welcome.png"),
+                  image: AssetImage("assets/images/welcome2.png"),
                   fit: BoxFit.cover,
                 ),
               ),
