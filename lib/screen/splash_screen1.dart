@@ -24,53 +24,96 @@ class Screen1 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "Welcome",
-              style: TextStyle(fontSize: 35, color: Colors.black,
-              fontWeight: FontWeight.bold,),
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text("Forgot to bring your wallet \n when you are shopping?",
-          textAlign: TextAlign.center,
-          style: TextStyle(  
-            fontSize: 12,
-            color: Colors.black
-          )),
-          SizedBox(height: 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 7,
-                            width: 7,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.green,
-                            ),
-                          ),
-                          SizedBox(width: 5),
-                          Container(
-                            height: 7,
-                            width: 7,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0xFFC8E6C9),
-                            ),
-                          ),
-                          SizedBox(width: 5),
-                          Container(
-                            height: 7,
-                            width: 7,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0xFFC8E6C9),
-                            ),
-                          ),
-                        ],
-                      ),
+            const Text(
+              "Forgot to bring your wallet \n when you are shopping?",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.black,
+              ),
+            ),
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 7,
+                  width: 7,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green,
+                  ),
+                ),
+                const SizedBox(width: 5),
+                Container(
+                  height: 7,
+                  width: 7,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFC8E6C9),
+                  ),
+                ),
+                const SizedBox(width: 5),
+                Container(
+                  height: 7,
+                  width: 7,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFC8E6C9),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 40),
+            Container(
+              margin: const EdgeInsets.all(40),
+              child: SizedBox(
+                height: 40,
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Screen2()),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                  ),
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+}
+
+// Tambahkan ini supaya tidak error referensi Screen2 (placeholder)
+class Screen2 extends StatelessWidget {
+  const Screen2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text("Screen2")),
     );
   }
 }
