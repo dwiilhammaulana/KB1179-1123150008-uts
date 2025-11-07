@@ -120,6 +120,28 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 10),
+
+                // Garis dengan tulisan "atau"
+                Row(
+                  children: const [
+                    Expanded(
+                      child: Divider(
+                        color: Colors.grey,
+                        thickness: 1,
+                        endIndent: 10,
+                      ),
+                    ),
+                    Text("atau", style: TextStyle(color: Colors.grey)),
+                    Expanded(
+                      child: Divider(
+                        color: Colors.grey,
+                        thickness: 1,
+                        indent: 10,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
