@@ -1,8 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:uts_1123150008/screen/login.dart';
 
-class Screen3 extends StatelessWidget {
+class Screen3 extends StatefulWidget {
   const Screen3({super.key});
+
+  @override
+  State<Screen3> createState() => _Screen3State();
+}
+
+class _Screen3State extends State<Screen3>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +39,21 @@ class Screen3 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 25),
-            Container(
-              height: 200,
-              width: 200,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.green,
-                image: DecorationImage(
-                  image: AssetImage("assets/images/welcome3.png"),
-                  fit: BoxFit.cover,
+            ScaleTransition(
+              scale: Tween<double>(begin: 0.9, end: 1.0).animate(_animation),
+              child: FadeTransition(
+                opacity: _animation,
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green,
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/welcome3.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -84,7 +116,7 @@ class Screen3 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                      MaterialPageRoute(builder: (context) => const Login()),
                       (Route<dynamic> route) => false,
                     );
                   },

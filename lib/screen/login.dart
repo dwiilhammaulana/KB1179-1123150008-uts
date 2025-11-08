@@ -106,10 +106,7 @@ class _LoginState extends State<Login> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 14,
-                        horizontal: 20,
-                      ),
+                      padding: EdgeInsets.zero,
                     ),
                     child: const Text(
                       "Login",

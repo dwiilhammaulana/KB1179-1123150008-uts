@@ -1,8 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:uts_1123150008/screen/splash_screen3.dart';
 
-class Screen2 extends StatelessWidget {
+class Screen2 extends StatefulWidget {
   const Screen2({super.key});
+
+  @override
+  State<Screen2> createState() => _Screen2State();
+}
+
+class _Screen2State extends State<Screen2>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..forward();
+    _fadeAnimation =
+        CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +39,18 @@ class Screen2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 25),
-            Container(
-              height: 200,
-              width: 200,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.green,
-                image: DecorationImage(
-                  image: AssetImage("assets/images/welcome2.png"),
-                  fit: BoxFit.cover,
+            FadeTransition(
+              opacity: _fadeAnimation,
+              child: Container(
+                height: 200,
+                width: 200,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.green,
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/welcome2.png"),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -84,7 +113,7 @@ class Screen2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Screen3()),
+                      MaterialPageRoute(builder: (context) => const Screen3()),
                       (Route<dynamic> route) => false,
                     );
                   },
