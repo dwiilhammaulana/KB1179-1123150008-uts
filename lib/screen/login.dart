@@ -13,8 +13,10 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Container(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -94,35 +96,28 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                Container(
-
-                  child: SizedBox(
-                    height: 40,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 14,
-                          horizontal: 20,
-                        ),
+                SizedBox(
+                  height: 40,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(color: Colors.white),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 14,
+                        horizontal: 20,
                       ),
-                      
+                    ),
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
                 const SizedBox(height: 10),
-
-                // Garis dengan tulisan "atau"
                 Row(
                   children: const [
                     Expanded(
@@ -143,14 +138,11 @@ class _LoginState extends State<Login> {
                   ],
                 ),
                 const SizedBox(height: 10),
-
-                // Google Login Button
                 SizedBox(
                   width: double.infinity,
                   height: 40,
                   child: OutlinedButton.icon(
                     onPressed: () {
-                      // Aksi login google
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Melakukan login dengan Google...'),
@@ -158,7 +150,6 @@ class _LoginState extends State<Login> {
                         ),
                       );
                     },
-                    // Menggunakan Icon.public sebagai placeholder yang lebih umum
                     icon: const Icon(Icons.public, color: Colors.black),
                     label: const Text(
                       "Login dengan Google",
@@ -167,23 +158,18 @@ class _LoginState extends State<Login> {
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
-                        // Menyamakan radius dengan tombol utama
                         borderRadius: BorderRadius.circular(25),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(height: 20),
-
-                // Link ke Halaman Register
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Belum punya akun?"),
                     TextButton(
-                      onPressed: () {
-                        // Aksi navigasi ke halaman register
-                      },
+                      onPressed: () {},
                       child: const Text(
                         "Daftar di sini",
                         style: TextStyle(
